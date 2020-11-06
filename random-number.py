@@ -64,6 +64,63 @@ print("\n")
 print("------------------------------------------------------")
 print("\n")
 
+print("question:4")
+diglist = [3,2,55,66,9,6]
+print(random.choice(diglist))
+
+print("or")
+
+print(random.randint(2,20))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+print("question:5")
+random.seed(7)
+print (random.randint(2,20))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+print("question:6")
+randomA = []
+randomB = []
+for i in range(1,20):
+    x = random.randint(2,40)
+    y = random.uniform(2,40)
+    randomA.append(x)
+    randomB.append(y)
+print(randomA)
+print(random.choice(randomA))
+
+print(randomB)
+print(random.choice(randomB))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+print("question:7")
+randomA = []
+randomB = []
+for i in range(1,20):
+    random.seed(10)
+    x = random.randint(2,40)
+    y = round(random.uniform(2,40),4)
+    randomA.append(x)
+    randomB.append(y)
+print(randomA)
+print(random.choice(randomA))
+
+print(randomB)
+print(random.choice(randomB))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
 # Simple random sampling
 print("Simple Random Sampling from Integer without a Seed list:\n")
 simpleA= sample(randomA,15)
