@@ -173,4 +173,20 @@ print("\n")
 
 print("Descriptive Statistics functions: \n")
 # Calculator.mean()
-print(Calculator.mean(randomA))
+a = [1,2,3,4,5]
+print(Calculator.mean1(a))
+
+print("mean:")
+randomA = []
+for i in range(30):
+    x = random.randint(1,40)
+    randomA.append(x)
+print(Calculator.mean1(randomA))
+
+a = [1,2,3,4,5,6]
+print(Calculator.median1(a))
+
+a = [1,2,3,4,5,6,6,5,5]
+print(Calculator.mode1(a))
+
+
