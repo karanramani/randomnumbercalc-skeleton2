@@ -183,10 +183,41 @@ for i in range(30):
     randomA.append(x)
 print(Calculator.mean1(randomA))
 
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+print("median:")
 a = [1,2,3,4,5,6]
 print(Calculator.median1(a))
 
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+print("mode:")
 a = [1,2,3,4,5,6,6,5,5]
 print(Calculator.mode1(a))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+print("variance")
+a = [1,2,3,4,5,6,6,5,5]
+print(Calculator.variance1(a))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+print("standardDeviation")
+a = [1,2,3,4,5,6,6,5,5]
+print(Calculator.std1(a))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+print("zscore:needs some work")
+a = [1,2,3,4,5,6,6,5,5]
+print(Calculator.zscore(a))
+
 
 
