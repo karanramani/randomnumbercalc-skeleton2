@@ -1,5 +1,8 @@
 import random
 from random import sample
+import numpy as np
+import scipy.stats as st
+
 print("\n")
 print("\n")
 # Random number without a seed (SINGLE)
@@ -69,3 +72,12 @@ print("\n")
 print("Simple Random Sampling from Float without a Seed list:\n")
 simpleB= sample(randomB,15)
 print(simpleB)
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+# Confidence Interval For a Sample
+print("Confidence Interval For a Sample from Integer without a Seed List")
+confidenceInterval= st.t.interval(alpha=0.95, df=len(simpleA)-1, loc=np.mean(simpleA), scale=st.sem(simpleA))
+print(confidenceInterval)
