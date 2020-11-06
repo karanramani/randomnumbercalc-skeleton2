@@ -1,8 +1,10 @@
 import random
+import math
 from random import sample
 import numpy as np
 import scipy.stats as st
-
+import statistics
+from Calculator import Calculator
 
 print("\n")
 print("\n")
@@ -66,12 +68,36 @@ print("------------------------------------------------------")
 print("\n")
 
 print("question:4")
-diglist = [3,2,55,66,9,6]
-print(random.choice(diglist))
+# diglist = [3,2,55,66,9,6]
+randomchoice1 = random.choice(randomA)
+randomchoice2 = random.choice(randomB)
 
-print("or")
+randomchoicewseed1 = random.choice(randomX)
+randomchoicewseed2 = random.choice(randomY)
 
-print(random.randint(2,20))
+print("Random Choice 1 (From Integer list without seed): ")
+print(randomchoice1)
+print("Random Choice 2 (From Float list without seed): ")
+print(randomchoice2)
+print("\n")
+
+print("Random Choice 1 (From Integer list with seed): ")
+print(randomchoicewseed1)
+
+print("Random Choice 2 (From Float list with seed): ")
+print(randomchoicewseed2)
+# print(random.choice(diglist))
+
+# print("or")
+#
+# print(random.randint(2,20))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+print("Mean Function call: ")
+x = statistics.mean(randomA)
+print(x)
 
 print("\n")
 print("------------------------------------------------------")
@@ -135,7 +161,16 @@ print("\n")
 print("------------------------------------------------------")
 print("\n")
 
-# Confidence Interval For a Sample
-print("Confidence Interval For a Sample from Integer without a Seed List")
-confidenceInterval= st.t.interval(alpha=0.95, df=len(simpleA)-1, loc=np.mean(simpleA), scale=st.sem(simpleA))
-print(confidenceInterval)
+# # Confidence Interval For a Sample
+# print("Confidence Interval For a Sample from Integer without a Seed List")
+# confidenceInterval= st.t.interval(alpha=0.95, df=len(simpleA)-1, loc=np.mean(simpleA), scale=st.sem(simpleA))
+# print(confidenceInterval)
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+# Descriptive Statistics functions
+
+print("Descriptive Statistics functions: \n")
+# Calculator.mean()
+print(Calculator.mean(randomA))
