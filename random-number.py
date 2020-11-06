@@ -1,4 +1,5 @@
 import random
+from random import sample
 print("\n")
 print("\n")
 # Random number without a seed (SINGLE)
@@ -26,7 +27,7 @@ print("\n")
 # Random number list without a seed
 randomA = []
 randomB = []
-for i in range(0,10):
+for i in range(0,20):
     x = random.randrange(100,200)
     y = round(random.uniform(1,10),4)
     randomA.append(x)
@@ -44,7 +45,7 @@ print("\n")
 # Random Number List with a seed
 randomX = []
 randomY = []
-for i in range(0,10):
+for i in range(0,20):
     random.seed(10)
     a = random.randint(5,50)
     b = round(random.uniform(1,10),4)
@@ -59,3 +60,12 @@ print(randomY)
 print("\n")
 print("------------------------------------------------------")
 print("\n")
+
+# Simple random sampling
+print("Simple Random Sampling from Integer without a Seed list:\n")
+simpleA= sample(randomA,15)
+print(simpleA)
+print("\n")
+print("Simple Random Sampling from Float without a Seed list:\n")
+simpleB= sample(randomB,15)
+print(simpleB)
