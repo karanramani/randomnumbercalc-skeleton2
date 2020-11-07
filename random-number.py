@@ -8,7 +8,10 @@ from Calculator import Calculator
 
 print("\n")
 print("\n")
-# Random number without a seed (SINGLE)
+
+# Random Generator function
+#
+# 1. Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
 print ("Generating random number integer (without a seed):")
 print(random.randrange(100,200))
 
@@ -19,21 +22,24 @@ print("\n")
 print("------------------------------------------------------")
 print("\n")
 
-# Random number with a seed (SINGLE)
+# 2. Generate a random number with a seed between a range of two numbers - Both Integer and Decimal
+
 print ("Generating random number integer (with a seed):")
 random.seed(10)
 print(random.randint(5,50))
 print ("Generating random number decimal (with a seed):")
 random.seed(10.0)
 print(round(random.uniform(1,30),4))
+
 print("\n")
 print("------------------------------------------------------")
 print("\n")
 
-# Random number list without a seed
+# 3a. Generate a list of N random numbers without a seed and between a range of numbers - Both Integer and Decimal
+
 randomA = []
 randomB = []
-for i in range(0,20):
+for i in range(0,30):
     x = random.randrange(100,200)
     y = round(random.uniform(1,10),4)
     randomA.append(x)
@@ -44,14 +50,16 @@ print("Integer Numbers: ")
 print(randomA)
 print("\nFloat Numbers: ")
 print(randomB)
+
 print("\n")
 print("------------------------------------------------------")
 print("\n")
 
-# Random Number List with a seed
+# 3b. Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
+
 randomX = []
 randomY = []
-for i in range(0,20):
+for i in range(0,30):
     random.seed(10)
     a = random.randint(5,50)
     b = round(random.uniform(1,10),4)
@@ -63,17 +71,15 @@ print("Integer Numbers: ")
 print(randomX)
 print("\nFloat Numbers: ")
 print(randomY)
+
 print("\n")
 print("------------------------------------------------------")
 print("\n")
 
-print("question:4")
-# diglist = [3,2,55,66,9,6]
+# 4. Select a random item from a list
+    # Random item from list without seed
 randomchoice1 = random.choice(randomA)
 randomchoice2 = random.choice(randomB)
-
-randomchoicewseed1 = random.choice(randomX)
-randomchoicewseed2 = random.choice(randomY)
 
 print("Random Choice 1 (From Integer list without seed): ")
 print(randomchoice1)
@@ -81,74 +87,43 @@ print("Random Choice 2 (From Float list without seed): ")
 print(randomchoice2)
 print("\n")
 
+# 5. Set a seed and randomly.select the same value from a list
+randomchoicewseed1 = random.choice(randomX)
+randomchoicewseed2 = random.choice(randomY)
+
 print("Random Choice 1 (From Integer list with seed): ")
 print(randomchoicewseed1)
 
 print("Random Choice 2 (From Float list with seed): ")
 print(randomchoicewseed2)
-# print(random.choice(diglist))
 
-# print("or")
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+# 6. Select N number of items from a list without a seed
+N = 15
+print("N number of items from a list without a seed(Integer):")
+print(random.sample(randomA, N))
+print("\n")
+print("N number of items from a list without a seed(Float):")
+print(random.sample(randomB, N))
+print("\n")
+
+# 7. Select N number of items from a list with a seed
+print("N number of items from a list with a seed(Integer):")
+print(random.sample(randomX, N))
+print("\n")
+print("N number of items from a list with a seed(Float):")
+print(random.sample(randomY, N))
+
+print("\n")
+print("---------------------------------------------------------------------------------------------------------------")
+print("\n")
+
+# Population Sampling functions
 #
-# print(random.randint(2,20))
-
-print("\n")
-print("------------------------------------------------------")
-print("\n")
-print("Mean Function call: ")
-x = statistics.mean(randomA)
-print(x)
-
-print("\n")
-print("------------------------------------------------------")
-print("\n")
-
-print("question:5")
-random.seed(7)
-print (random.randint(2,20))
-
-print("\n")
-print("------------------------------------------------------")
-print("\n")
-
-print("question:6")
-randomA = []
-randomB = []
-for i in range(1,20):
-    x = random.randint(2,40)
-    y = random.uniform(2,40)
-    randomA.append(x)
-    randomB.append(y)
-print(randomA)
-print(random.choice(randomA))
-
-print(randomB)
-print(random.choice(randomB))
-
-print("\n")
-print("------------------------------------------------------")
-print("\n")
-
-print("question:7")
-randomA = []
-randomB = []
-for i in range(1,20):
-    random.seed(10)
-    x = random.randint(2,40)
-    y = round(random.uniform(2,40),4)
-    randomA.append(x)
-    randomB.append(y)
-print(randomA)
-print(random.choice(randomA))
-
-print(randomB)
-print(random.choice(randomB))
-
-print("\n")
-print("------------------------------------------------------")
-print("\n")
-
-# Simple random sampling
+# 1. Simple random sampling
 print("Simple Random Sampling from Integer without a Seed list:\n")
 simpleA= sample(randomA,15)
 print(simpleA)
@@ -160,16 +135,61 @@ print(simpleB)
 print("\n")
 print("------------------------------------------------------")
 print("\n")
+# 2. Confidence Interval For a Sample
 
-# # Confidence Interval For a Sample
-# print("Confidence Interval For a Sample from Integer without a Seed List")
-# confidenceInterval= st.t.interval(alpha=0.95, df=len(simpleA)-1, loc=np.mean(simpleA), scale=st.sem(simpleA))
-# print(confidenceInterval)
+print("Confidence Interval For a Sample from Integer without a Seed List")
+confidenceInterval= st.t.interval(alpha=0.95, df=len(simpleA)-1, loc=np.mean(simpleA), scale=st.sem(simpleA))
+print(confidenceInterval)
 
 print("\n")
 print("------------------------------------------------------")
 print("\n")
-# Descriptive Statistics functions
+
+# 3. Margin of Error
+
+n = random.choice(simpleA)
+z = Calculator.zscore(randomA)
+t = Calculator.std1(randomA)
+
+print("Margin of Error: ")
+
+print(Calculator.margin_of_error(n, z, t))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+# Cochran’s Sample Size Formula
+
+p = random.choice(simpleB)
+e = random.choice(simpleB)
+
+print("Cochran's Sample size formula")
+print(Calculator.cochran(z, p, e))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+# How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation)
+width = random.choice(simpleB)
+a = confidenceInterval[0]/2
+b = Calculator.zscore(confidenceInterval)
+p = width/2
+q = 0.50
+p2 = 1-q
+c = q*p2
+d = a / b
+e = d * d
+Final = c*e
+print("How to Find a Sample Size Given a Confidence Interval and Width (unknown population standard deviation):")
+print(Final)
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+# Descriptive Statistics functions - PRIYESHA
 
 print("Descriptive Statistics functions: \n")
 # Calculator.mean()
@@ -177,11 +197,6 @@ a = [1,2,3,4,5]
 print(Calculator.mean1(a))
 
 print("mean:")
-randomA = []
-for i in range(30):
-    x = random.randint(1,40)
-    randomA.append(x)
-print(Calculator.mean1(randomA))
 
 print("\n")
 print("------------------------------------------------------")
