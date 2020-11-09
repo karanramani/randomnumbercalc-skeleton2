@@ -71,3 +71,4 @@ class Calculator:
     def cochran(z, p ,e):
         result = cochran_main(z, p, e)
         return result
+

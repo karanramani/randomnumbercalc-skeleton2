@@ -86,6 +86,11 @@ print(randomchoice1)
 print("Random Choice 2 (From Float list without seed): ")
 print(randomchoice2)
 print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+
+print("\n")
 
 # 5. Set a seed and randomly.select the same value from a list
 randomchoicewseed1 = random.choice(randomX)
@@ -230,9 +235,52 @@ print(Calculator.std1(a))
 print("\n")
 print("------------------------------------------------------")
 print("\n")
-print("zscore:needs some work")
-a = [1,2,3,4,5,6,6,5,5]
+print("zscore:")
+a = [1,1,2,3,5,6,11,7,5,5,8,10,13,13]
 print(Calculator.zscore(a))
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+
+print("Exception divide by 0 using a randomchoice value:")
+
+while True:
+    try:
+        x = randomchoice1/0
+        continue
+    except:
+        print("error cannot divide by 0")
+        break
+        exit(1)
+        # exit(1)
+    # else:
+    #     print("Success, no error!")
+    # finally:
+    #     print("It was really nice talking to you.  Goodbye!")
+
+
+print("\n")
+print("------------------------------------------------------")
+print("\n")
+
+
+print("Exception for empty list:")
+
+while True:
+    try:
+        empList = []
+        x = empList/0
+    except:
+        print("error empty list")
+        break
+        exit(1)
+    # else:
+    #     print("Success, no error!")
+    # finally:
+    #     print("It was really nice talking to you.  Goodbye!")
+
 
 
 
