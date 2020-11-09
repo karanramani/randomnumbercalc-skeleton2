@@ -271,9 +271,9 @@ print("Exception for empty list:")
 while True:
     try:
         empList = []
-        x = empList/0
+        x = empList/randomchoice1
     except:
-        print("error empty list")
+        print("Error empty list")
         break
         exit(1)
     # else:
